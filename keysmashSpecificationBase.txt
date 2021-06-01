@@ -1,0 +1,74 @@
+--------.,---------------------------------------
+ OPCODE || DESCRIPTION
+--------||---------------------------------------
+		||
+10		||  push(numerical value)
+1.2		||  push(numerical value with decimals (double))
+`txt`   ||  push(text)
+		||    NOTE: \` is the escape sequence for `
+		||	  NOTE: \\ is the espace sequence for \
+'		||  push(``)
+"		||  push(`next char`)
+		||
+r		||  pop with no action
+d		||  duplicate top item of stack
+t		||  push an int representing the type of the top item to the stack
+S		||  swap top two values
+$		||  rotate top pop values
+		||
++		||  push(pop1 + pop2)
+-       ||  push(pop1 - pop2)
+~       ||  push(-pop)
+*		||  push(pop1 * pop2)
+/		||  push(pop1 / pop2)
+		||
+e		||  push(pop1 ^ pop2)
+E		||  push(ln(pop))
+s		||  push(sqrt(pop))
+x		||  push(pop1 * 2^pop2)
+X		||  push(pop1 * 10^pop2)
+		||
+&		||  push(pop1 & pop2)
+|       ||  push(pop1 | pop2)
+^       ||  push(pop1 xor pop2)
+!		||  push(not(pop))
+		||
+_		||  push(pop1 concat pop2)
+		||
+i		||  push(single input)
+I		||  push(full input (waited for))
+p		||  print(pop)
+P		||  print(all on stack as seperate lines)
+		||
+#		||  push(pop str->double)
+c		||  push(pop num->str ascii)
+C		||  push(pop str->num ascii)
+		||
+=		||  push(pop1 == pop2)
+g		||  push(pop1 > pop2)
+G		||  push(pop1 >= pop2)
+l		||  push(pop1 < pop2)
+L		||  push(pop1 <= pop2)
+b		||  push(pop1 < pop2 & pop2 < pop3)
+		||
+m		||  push(min(pop1, pop2))
+M		||  push(max(pop1, pop2))
+B		||  push(clamp(pop2, pop1, pop3)
+		||
+{code}	||  push(code as object)
+%		||  do(pop)
+		||
+?		||  if(pop1) do pop2
+@		||  while(pop1) do pop2
+		||
+;var	||  create the variable var with value '0'
+>var	||  set the var to pop
+<var	||  pop the variable var
+		||
+[cst	||  create the constant cst with value pop
+]cst	||  pop the constant cst
+		||
+:		||  pop1[pop2]
+\		||  wrap top pop1 items into an array and push
+		||
+--------'`-------------------------------------------------
